@@ -5,8 +5,8 @@ public class CamelCaseBreaker
     {
         for (var i = 1; i < str.Length; i++)
         {
-            // If the first character is lowercase OR uppercase, AND the second char is uppercase...
-            if ((Char.IsLower(str[i - 1]) || Char.IsUpper(str[i - 1])) && Char.IsUpper(str[i]))
+            // IF the character is uppercase and we don't have a space before it,
+            if (Char.IsUpper(str[i]) && str[i - 1] != ' ')
             {
                 // Insert a space before the uppercase character.
                 str = str.Insert(i, " ");
